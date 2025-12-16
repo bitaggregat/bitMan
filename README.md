@@ -1,4 +1,4 @@
-# bitdMan
+# bitMan
 
 The bitMan is a versatile, strictly limited edition DIY gadget that combines the Christmas season with technology and creativity. With features such as individually controllable LEDs, melodies and programmability, it is ideal for hobbyists and technology enthusiasts - from beginners to experienced developers. Thanks to the USB-C connection and an Arduino-compatible microcontroller, there are virtually no limits to your projects.
 
@@ -9,24 +9,25 @@ The bitMan is a versatile, strictly limited edition DIY gadget that combines the
 | Component         |               Direction | PORT - PIN | Arduino-PIN |                      Comment |
 |:------------------|------------------------:|-----------:|------------:|-----------------------------:|
 | ATmega328PB       |                       - |          - |           - | With Micronucleus bootloader |
-| Led 1 (red)       |                    GPIO |            |           9 |      Low-Active (VCC driven) |
-| Led 3 (red)       |                    GPIO |            |          23 |      Low-Active (VCC driven) |
-| Led 4 (red)       |                    GPIO |            |          31 |      Low-Active (VCC driven) |
-| Led 5 (green)     |                    GPIO |            |           7 |     High-Active (MCU driven) |
-| Led 6 (green)     |                    GPIO |            |           8 |     High-Active (MCU driven) |
-| RGB LED 2 (blue)  |                    GPIO |            |          14 |     High-Active (MCU driven) |
-| RGB LED 2 (red)   |                    GPIO |            |          13 |     High-Active (MCU driven) |
-| RGB LED 2 (green) |                    GPIO |            |          10 |     High-Active (MCU driven) |
-| Buzzer            |                    GPIO |            |          32 |     High-Active (MCU driven) |
-| Button            |                    GPIO |            |          24 |                            - |
-| USB D+            |                    GPIO |        B-3 |          11 |                            - |
-| USB D-            |                    GPIO |        B-4 |          12 |                            - |
-| Grove Adapter     | I²C/GPIO (only digital) |        E-0 |          23 |                            - |
-| Grove Adapter     | I²C/GPIO (only digital) |        E-1 |          24 |                            - |
-| SPI-Reset         |              Reset/GPIO |        C-6 |          22 |                            - |
-| SPI-CIPO (MISO)   |                     SPI |        B-4 |          12 |                            - |
-| SPI-COPI (MOSI)   |                     SPI |        B-3 |          11 |                            - |
-| SPI-Clock         |                     SPI |        B-5 |          13 |                            - |
+| Led 1 (red)       |                    GPIO |     PD5    |             |      Low-Active (VCC driven) |
+| Led 3 (red)       |                    GPIO |     PC0    |             |      Low-Active (VCC driven) |
+| Led 4 (red)       |                    GPIO |     PD1    |             |      Low-Active (VCC driven) |
+| Led 5 (green)     |                    GPIO |     PB6    |             |     High-Active (MCU driven) |
+| Led 6 (green)     |                    GPIO |     PB7    |             |     High-Active (MCU driven) |
+| RGB LED 2 (blue)  |                    GPIO |     PB2    |             |     High-Active (MCU driven) |
+| RGB LED 2 (red)   |                    GPIO |     PB1    |             |     High-Active (MCU driven) |
+| RGB LED 2 (green) |                    GPIO |     PD6    |             |     High-Active (MCU driven) |
+| Buzzer            |                    GPIO |     PD2    |             |     High-Active (MCU driven) |
+| Button            |                    GPIO |     PC1    |             |                            - |
+| Grove Adapter     | I²C/GPIO (only digital) |     PE0    |             |                            - |
+| Grove Adapter     | I²C/GPIO (only digital) |     PE1    |             |                            - |
+| SPI-Reset         |              Reset/GPIO |     PC6    |             |                            - |
+| SPI-CIPO (MISO)   |                     SPI |     PB4    |             |                            - |
+| SPI-COPI (MOSI)   |                     SPI |     PB3    |             |                            - |
+| SPI-Clock         |                     SPI |     PB5    |             |                            - |
+| USB D+            |                    GPIO |     PB3    |             |                            - |
+| USB D-            |                    GPIO |     PB4    |             |                            - |
+
 
 ### Schematic and project files
 

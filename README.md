@@ -9,25 +9,24 @@ The bitMan is a versatile, strictly limited edition DIY gadget that combines the
 | Component         |               Direction | PORT - PIN | Arduino-PIN |                      Comment |
 |:------------------|------------------------:|-----------:|------------:|-----------------------------:|
 | ATmega328PB       |                       - |          - |           - | With Micronucleus bootloader |
-| Led 1 (red)       |                    GPIO |     PD5    |             |      Low-Active (VCC driven) |
-| Led 3 (red)       |                    GPIO |     PC0    |             |      Low-Active (VCC driven) |
-| Led 4 (red)       |                    GPIO |     PD1    |             |      Low-Active (VCC driven) |
-| Led 5 (green)     |                    GPIO |     PB6    |             |     High-Active (MCU driven) |
-| Led 6 (green)     |                    GPIO |     PB7    |             |     High-Active (MCU driven) |
-| RGB LED 2 (blue)  |                    GPIO |     PB2    |             |     High-Active (MCU driven) |
-| RGB LED 2 (red)   |                    GPIO |     PB1    |             |     High-Active (MCU driven) |
-| RGB LED 2 (green) |                    GPIO |     PD6    |             |     High-Active (MCU driven) |
-| Buzzer            |                    GPIO |     PD2    |             |     High-Active (MCU driven) |
-| Button            |                    GPIO |     PC1    |             |                            - |
-| Grove Adapter     | I²C/GPIO (only digital) |     PE0    |             |                            - |
-| Grove Adapter     | I²C/GPIO (only digital) |     PE1    |             |                            - |
-| SPI-Reset         |              Reset/GPIO |     PC6    |             |                            - |
-| SPI-CIPO (MISO)   |                     SPI |     PB4    |             |                            - |
-| SPI-COPI (MOSI)   |                     SPI |     PB3    |             |                            - |
-| SPI-Clock         |                     SPI |     PB5    |             |                            - |
-| USB D+            |                    GPIO |     PB3    |             |                            - |
-| USB D-            |                    GPIO |     PB4    |             |                            - |
-
+| Led 1 (red)       |                    GPIO |        PD5 |           5 |      Low-Active (VCC driven) |
+| Led 3 (red)       |                    GPIO |        PC0 |          14 |      Low-Active (VCC driven) |
+| Led 4 (red)       |                    GPIO |        PD1 |           1 |      Low-Active (VCC driven) |
+| Led 5 (green)     |                    GPIO |        PB6 |          20 |     High-Active (MCU driven) |
+| Led 6 (green)     |                    GPIO |        PB7 |          21 |     High-Active (MCU driven) |
+| RGB LED 2 (blue)  |                    GPIO |        PB2 |          10 |     High-Active (MCU driven) |
+| RGB LED 2 (red)   |                    GPIO |        PB1 |           9 |     High-Active (MCU driven) |
+| RGB LED 2 (green) |                    GPIO |        PD6 |           6 |     High-Active (MCU driven) |
+| Buzzer            |                    GPIO |        PD2 |           2 |     High-Active (MCU driven) |
+| Button            |                    GPIO |        PC1 |          15 |     High-Active (MCU driven) |
+| USB D+            |                    GPIO |        PB3 |             |                            - |
+| USB D-            |                    GPIO |        PB4 |             |                            - |
+| Grove Adapter     | I²C/GPIO (only digital) |        PE0 |             |                            - |
+| Grove Adapter     | I²C/GPIO (only digital) |        PE1 |             |                            - |
+| SPI-Reset         |              Reset/GPIO |        PC6 |             |                            - |
+| SPI-CIPO (MISO)   |                     SPI |        PB4 |             |                            - |
+| SPI-COPI (MOSI)   |                     SPI |        PB3 |             |                            - |
+| SPI-Clock         |                     SPI |        PB5 |             |                            - |
 
 ### Schematic and project files
 
@@ -40,10 +39,10 @@ It is not yet possible to flash the application directly from the Arduino IDE. T
 1. **Disconnect** the USB cable from the bitMan
 2. Select the **Arduino Uno** as project board in the Arduino IDE
 3. Export the project from the Arduino IDE: Menu “Sketch” -> “Export Compiled Binary”
-4. Execute the following command in a console to **flash** the exported hex-file `micronucleus --run <path_to_repo>/bitMan/software/bitBreadMan/build/arduino.avr.uno/bitBreadMan.ino.hex`
+4. Execute the following command in a console to **flash** the exported hex-file `micronucleus --run <path_to_repo>/bitMan/software/bitMan/build/arduino.avr.uno/bitMan.ino.hex`
 5. **Connect** the USB cable to the bitMan (important: the above command must be started beforehand, as the tool is waiting for the bootloader)
 
-What happens here in the background: As soon as the bitMan is supplied with power, the bootloader (micronucleus) starts. If there is no communication between the bitdMan and the host (PC) within 2s, the flashed application starts, if a valid one is available.
+What happens here in the background: As soon as the bitMan is supplied with power, the bootloader (micronucleus) starts. If there is no communication between the bitMan and the host (PC) within 2s, the flashed application starts, if a valid one is available.
 The bootloader registers a USB device in the host, with which the “micronucleus commandline tool” communicates and can manipulate the flash in the bitMan.
 
 ## Build and install the bootloader
@@ -74,4 +73,3 @@ Individual LEDs can be activated/deactivated by `enable_led()`.
 ### Use the Grove ecosystem
 
 Thanks to the integrated Grove connection, the bitMan can be expanded with Grove modules such as sensors or network modules. Further information and examples can be found [here](https://wiki.seeedstudio.com/Grove_System/).
-

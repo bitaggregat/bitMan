@@ -1,0 +1,3 @@
+[submodule "software/bootloader/extern/micronucleus"]
+	path = software/bootloader/extern/micronucleus
+	url = https://github.com/micronucleus/micronucleus.git
